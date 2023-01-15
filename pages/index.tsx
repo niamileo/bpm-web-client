@@ -11,7 +11,7 @@ export default function Home() {
         <div className="container-fluid">
           {/* <!-- Page title --> */}
           <Kapak />
-          <IndexRest />
+          {/* <IndexRest /> */}
         </div>
         <Footer />
       </div>

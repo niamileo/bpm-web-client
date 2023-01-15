@@ -1,4 +1,16 @@
+import { useState } from "react";
+import {
+  Dropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+} from "reactstrap";
+
 export default function Aside() {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  const toggle = () => setDropdownOpen((prevState) => !prevState);
+
   return (
     <aside className="navbar navbar-vertical navbar-expand-lg navbar-dark">
       <div className="container-fluid">
@@ -36,11 +48,11 @@ export default function Aside() {
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
-                stroke-width="2"
+                strokeWidth="2"
                 stroke="currentColor"
                 fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
@@ -108,11 +120,11 @@ export default function Aside() {
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
-                    stroke-width="2"
+                    strokeWidth="2"
                     stroke="currentColor"
                     fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   >
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <polyline points="5 12 3 12 12 3 21 12 19 12" />
@@ -138,11 +150,11 @@ export default function Aside() {
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
-                    stroke-width="2"
+                    strokeWidth="2"
                     stroke="currentColor"
                     fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   >
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <polyline points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5 12 3" />
@@ -306,11 +318,11 @@ export default function Aside() {
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
-                    stroke-width="2"
+                    strokeWidth="2"
                     stroke="currentColor"
                     fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   >
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <polyline points="9 11 12 14 20 6" />
@@ -335,11 +347,11 @@ export default function Aside() {
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
-                    stroke-width="2"
+                    strokeWidth="2"
                     stroke="currentColor"
                     fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   >
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
@@ -395,11 +407,11 @@ export default function Aside() {
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
-                    stroke-width="2"
+                    strokeWidth="2"
                     stroke="currentColor"
                     fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   >
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <rect x="4" y="4" width="6" height="5" rx="2" />
@@ -410,6 +422,9 @@ export default function Aside() {
                 </span>
                 <span className="nav-link-title">Layout</span>
               </a>
+              <DropdownMenu>
+                <DropdownItem>hello</DropdownItem>
+              </DropdownMenu>
               <div className="dropdown-menu show">
                 <div className="dropdown-menu-columns">
                   <div className="dropdown-menu-column">
@@ -494,11 +509,11 @@ export default function Aside() {
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
-                    stroke-width="2"
+                    strokeWidth="2"
                     stroke="currentColor"
                     fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   >
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M14 3v4a1 1 0 0 0 1 1h4" />
