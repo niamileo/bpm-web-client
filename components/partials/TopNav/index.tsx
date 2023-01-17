@@ -26,7 +26,7 @@ const links = [
 ];
 
 const createNavItem = ({ href, text, className, icon }: NavItemType) => (
-  <NavItem>
+  <NavItem key={text}>
     <NavLink href={href} className={className}>
       {icon}
       {text}
