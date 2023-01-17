@@ -1,4 +1,5 @@
 import Bell from "components/SVG/Bell.svg";
+import Image from "next/image";
 
 export default function Header() {
   return (
@@ -14,12 +15,12 @@ export default function Header() {
         </button>
         <h1 className="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
           <a href=".">
-            <img
-              src="logo.svg"
+            <Image
+              alt=""
+              src={require("assets/images/logo.png")}
+              className="navbar-brand-image"
               width="110"
               height="32"
-              alt="Tabler"
-              className="navbar-brand-image"
             />
           </a>
         </h1>
