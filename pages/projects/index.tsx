@@ -1,5 +1,8 @@
-import { Col, Row } from "reactstrap";
-import GalleryCard from "../../components/widgets/GalleryCard";
+import { Button, Col, Row } from "reactstrap";
+import GalleryCard from "components/widgets/GalleryCard";
+import PageHeader from "components/partials/PageHeader";
+import PlusIcon from "components/SVG/Plus.svg";
+import Link from "next/link";
 
 const dummy_projects = [
   {
@@ -17,6 +20,14 @@ const dummy_projects = [
 export default function Projects() {
   return (
     <Row>
+      <PageHeader>
+        <Link href={"/projects/form"}>
+          <Button color="primary">
+            <PlusIcon />
+            New Project
+          </Button>
+        </Link>
+      </PageHeader>
       {dummy_projects.map((project, index) => (
         <Col sm={3} key={index}>
           <GalleryCard
