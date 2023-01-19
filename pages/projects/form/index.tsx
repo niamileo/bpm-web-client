@@ -3,10 +3,17 @@ import PageHeader from "components/partials/PageHeader";
 import { Form, Formik } from "formik";
 import { Button, Card, CardBody, Row } from "reactstrap";
 import { createProject } from "services/ProjectService";
+import { toast } from "react-toastify";
+import { useRouter } from "next/router";
 
 export default function ProjectForm() {
+  let router = useRouter();
+
   const handleSubmit = (data: object) => {
-    createProject(data);
+    createProject(data).then(() => {
+      toast.success("Project Created Successfully");
+      router.push("/projects");
+    });
   };
 
   return (
