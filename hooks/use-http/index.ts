@@ -1,24 +1,26 @@
 import { AxiosResponse } from "axios";
 import { useEffect, useState } from "react";
 
-export default function useHttp(
-  axiosService: (params?: Object) => Promise<AxiosResponse>,
-  options: any = {},
-  defaultValue: Object | Array<any> | null = null
+export default function useHttp<t>(
+  axiosService: (params?: any) => Promise<AxiosResponse>,
+  options: any = {}
 ) {
-  const [data, setData] = useState(<any>defaultValue);
+  const { onMount = true, ...serviceParams } = options;
+
+  const [data, setData] = useState<t>();
 
   const execute = () => {
-    axiosService(options)
+    axiosService(serviceParams)
       .then((res) => {
-        console.log(res.data.data);
         setData(res.data.data);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   useEffect(() => {
-    if (defaultValue) {
+    if (onMount) {
       execute();
     }
   }, []);
