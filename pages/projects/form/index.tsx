@@ -18,6 +18,7 @@ export default function ProjectForm() {
             {({ values }) => (
               <Form>
                 <FormikTextField name="title" label="Title" />
+                <FormikTextField name="slug" label="Slug" />
                 <FormikTextField
                   name="desc"
                   label="Description"
