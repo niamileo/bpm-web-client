@@ -11,7 +11,7 @@ import PlusIcon from "components/SVG/Plus.svg";
 import { fetchProjects } from "services/ProjectService";
 
 export default function Projects() {
-  const { data: projects } = useHttp(fetchProjects, {}, []);
+  const { data = [] } = useHttp<Project[]>(fetchProjects);
 
   return (
     <Row>
@@ -23,7 +23,7 @@ export default function Projects() {
           </Button>
         </Link>
       </PageHeader>
-      {projects.map((project, index) => (
+      {data.map((project, index) => (
         <Col sm={3} key={index} className="mt-3">
           <GalleryCard
             key={index}

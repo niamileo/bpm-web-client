@@ -14,8 +14,10 @@ import { fetchProjectById } from "services/ProjectService";
 
 export default function ProjectDashboard() {
   const router = useRouter();
-  const { data } = useHttp(fetchProjectById, { id: router.query.id }, {});
-  console.log(router);
+  const { data = [] } = useHttp<Project[]>(fetchProjectById, {
+    id: router.query.id,
+  });
+
   return (
     <Row>
       <PageHeader
