@@ -1,23 +1,18 @@
+// ** Hooks
+import useHttp from "hooks/use-http";
+// ** Partials
+import PageHeader from "components/partials/PageHeader";
+// ** Components
+import Link from "next/link";
 import { Button, Col, Row } from "reactstrap";
 import GalleryCard from "components/widgets/GalleryCard";
-import PageHeader from "components/partials/PageHeader";
 import PlusIcon from "components/SVG/Plus.svg";
-import Link from "next/link";
-
-const dummy_projects = [
-  {
-    title: "project 1",
-    slug: "project_1",
-    desc: "project 1 description",
-  },
-  {
-    title: "project 2",
-    slug: "project_2",
-    desc: "project 2 description",
-  },
-];
+// ** Services
+import { fetchProjects } from "services/ProjectService";
 
 export default function Projects() {
+  const { data: projects } = useHttp(fetchProjects, {}, []);
+
   return (
     <Row>
       <PageHeader>
@@ -28,7 +23,7 @@ export default function Projects() {
           </Button>
         </Link>
       </PageHeader>
-      {dummy_projects.map((project, index) => (
+      {projects.map((project, index) => (
         <Col sm={3} key={index}>
           <GalleryCard
             key={index}
