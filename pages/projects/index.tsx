@@ -15,7 +15,7 @@ export default function Projects() {
 
   return (
     <Row>
-      <PageHeader>
+      <PageHeader title="Projects List">
         <Link href={"/projects/form"}>
           <Button color="primary">
             <PlusIcon />
