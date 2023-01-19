@@ -5,6 +5,7 @@ export const BASE_URL = "http://localhost:8000";
 export const apiUrlV1 = `${BASE_URL}`;
 
 axios.defaults.baseURL = apiUrlV1;
+axios.defaults.headers.common["Accept"] = "application/json";
 axios.interceptors.response.use(null, (error) => {
   // prettier-ignore
   const expectedError =
