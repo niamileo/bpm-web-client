@@ -24,7 +24,7 @@ export default function Projects() {
         </Link>
       </PageHeader>
       {projects.map((project, index) => (
-        <Col sm={3} key={index}>
+        <Col sm={3} key={index} className="mt-3">
           <GalleryCard
             key={index}
             title={project.title}
