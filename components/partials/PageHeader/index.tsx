@@ -1,12 +1,6 @@
 import Plus from "components/SVG/Plus.svg";
 import { Button, Col } from "reactstrap";
 
-type PageHeaderProps = {
-  title?: string;
-  pretitle?: string;
-  children?: any;
-};
-
 export default function PageHeader({
   children,
   title,
