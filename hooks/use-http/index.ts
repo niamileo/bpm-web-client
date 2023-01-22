@@ -3,9 +3,10 @@ import { useEffect, useState } from "react";
 
 export default function useHttp<t>(
   axiosService: (params?: any) => Promise<AxiosResponse>,
-  options: any = {}
+  options: any = {},
+  onMount = false
 ) {
-  const { onMount = true, ...serviceParams } = options;
+  const { ...serviceParams } = options;
 
   const [data, setData] = useState<t>();
 
