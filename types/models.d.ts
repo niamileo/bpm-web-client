@@ -11,3 +11,5 @@ interface Task {
   desc: string;
   type: string;
 }
+
+interface ProjectMembers {}
