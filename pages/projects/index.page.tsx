@@ -11,7 +11,7 @@ import PlusIcon from "components/SVG/Plus.svg";
 import { fetchProjects } from "services/ProjectService";
 
 export default function Projects() {
-  const { data = [] } = useHttp<Project[]>(fetchProjects);
+  const { data = [] } = useHttp<Project[]>(fetchProjects, {}, true);
 
   return (
     <Row>
