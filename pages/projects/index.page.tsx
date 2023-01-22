@@ -29,7 +29,7 @@ export default function Projects() {
             key={index}
             title={project.title}
             subtitle={project.desc}
-            href={`/projects/${project.slug}?id=${project.id}`}
+            href={`/projects/${project.slug}?id=${project.id}&mode=general`}
           />
         </Col>
       ))}
