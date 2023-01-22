@@ -9,6 +9,9 @@ type CreateProjectsProps = {
   desc?: string;
 };
 
+type UpdateProjectProps = CreateProjectsProps & {
+  id: string | number;
+};
 type FetchTasksProps = {};
 
 type FetchProjectMembersParams = {};
