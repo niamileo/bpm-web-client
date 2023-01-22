@@ -10,3 +10,5 @@ type CreateProjectsProps = {
 };
 
 type FetchTasksProps = {};
+
+type FetchProjectMembersParams = {};

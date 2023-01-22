@@ -8,3 +8,6 @@ export const fetchProjectById = ({ id }: FetchProjectByIdProps) =>
 
 export const createProject = (data: CreateProjectsProps) =>
   http.post("project/create", data);
+
+export const fetchProjectMembers = (params?: FetchProjectMembersParams) =>
+  http.get("", { params });
