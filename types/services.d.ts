@@ -8,3 +8,5 @@ type CreateProjectsProps = {
   title?: string;
   desc?: string;
 };
+
+type FetchTasksProps = {};
