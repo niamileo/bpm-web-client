@@ -9,7 +9,7 @@ import { updateProject, fetchProjectById } from "services/ProjectService";
 export default function General() {
   const router = useRouter();
 
-  const { data = [] } = useHttp<Project[]>(
+  const { data } = useHttp<Project>(
     fetchProjectById,
     { id: router.query.id },
     true
@@ -26,9 +26,9 @@ export default function General() {
     <Row>
       <Formik
         initialValues={{
-          title: data.length && data[0].title,
-          desc: data.length && data[0].desc,
-          slug: data.length && data[0].slug,
+          title: data?.title,
+          desc: data?.desc,
+          slug: data?.slug,
         }}
         enableReinitialize
         onSubmit={handleSubmit}

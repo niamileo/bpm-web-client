@@ -14,7 +14,8 @@ import { fetchProjectById } from "services/ProjectService";
 
 export default function ProjectDashboard() {
   const router = useRouter();
-  const { data = [] } = useHttp<Project[]>(
+
+  const { data } = useHttp<Project>(
     fetchProjectById,
     {
       id: router.query.id,
@@ -24,10 +25,7 @@ export default function ProjectDashboard() {
 
   return (
     <Row>
-      <PageHeader
-        title={data.length && data[0].title}
-        pretitle="Project Dashboard"
-      />
+      <PageHeader title={data?.title} pretitle="Project Dashboard" />
       <Nav className="mb-5">
         <Link
           style={{ textDecoration: "none" }}
