@@ -12,4 +12,11 @@ interface Task {
   type: string;
 }
 
+interface User {
+  username: string;
+  first_name: string;
+  last_name: string;
+  email: string;
+}
+
 interface ProjectMembers {}
