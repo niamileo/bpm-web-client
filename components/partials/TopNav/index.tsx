@@ -9,6 +9,7 @@ import {
 } from "reactstrap";
 import HomeIcon from "components/SVG/Home.svg";
 import BoxIcon from "components/SVG/Box.svg";
+import StarIcon from "components/SVG/Star.svg";
 
 type NavItemType = {
   href: string;
@@ -23,6 +24,7 @@ type NavItemType = {
 const links = [
   { href: "/", text: "Home", icon: <HomeIcon /> },
   { href: "/projects", text: "Projects", icon: <BoxIcon /> },
+  { href: "/users", text: "Users", icon: <StarIcon /> },
 ];
 
 const createNavItem = ({ href, text, className, icon }: NavItemType) => (
