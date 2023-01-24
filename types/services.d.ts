@@ -15,3 +15,12 @@ type UpdateProjectProps = CreateProjectsProps & {
 type FetchTasksProps = {};
 
 type FetchProjectMembersParams = {};
+
+type FetchUsersParams = {};
+
+type CreateUserParams = {
+  first_name?: string;
+  last_name?: string;
+  email?: string;
+  username?: string;
+};
