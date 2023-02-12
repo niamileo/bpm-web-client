@@ -24,3 +24,10 @@ type CreateUserParams = {
   email?: string;
   username?: string;
 };
+
+type CreateTaskProps = {
+  title?: string;
+  desc?: string;
+  state?: string;
+  project_id?:number
+}
