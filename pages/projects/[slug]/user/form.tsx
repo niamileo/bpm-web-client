@@ -4,32 +4,29 @@ import { Form, Formik } from "formik";
 import Router, { useRouter } from "next/router";
 import { toast } from "react-toastify";
 import { Button, Card, CardBody, Row } from "reactstrap";
-import { createTask } from "services/TaskService";
+import { createProjectMember } from "services/ProjectService";
 
 
 
-export default function TaskForm(){
-    const router = useRouter();
+export default function UserForm(){
+    let router=useRouter();
     let project_id=(router.query.id);
     const handleSubmit=(data:object)=>{
-        console.log('project_id',project_id)
-        createTask({...data,project_id}).then(()=>{
-            toast.success("Task Created Successfully");
-            Router.push('/projects/'+router.query.slug+'?id='+router.query.id+'&mode=tasks');
+        createProjectMember({...data,project_id}).then(()=>{
+            toast.success("User add Project Successfully");
+            Router.push('/projects/'+router.query.slug+'?id='+router.query.id+'&mode=users');
         }).catch();
     }
     return(
         <Row>
-            <PageHeader title="Task Form"/>
+            <PageHeader title="User Form"/>
             <Card>
                 <CardBody>
                     <Formik initialValues={{}} onSubmit={handleSubmit}>
                         {({values})=>(
                             <Form>
-                                <FormikTextField name="title" label="Title"/>
-                                <FormikTextField name="desc" label="Description" type="textarea"/>
-                                <FormikTextField name="state" label="State"/>
-                                <FormikTextField name="type" label="Type"/>
+                                <FormikTextField name="user_id" label="User"/>
+                                <FormikTextField name="role_id" label="Role Name"/>
                                 <Button type="submit">Create</Button>
                             </Form>
                         )}

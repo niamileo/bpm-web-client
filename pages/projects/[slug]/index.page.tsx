@@ -8,10 +8,11 @@ import Link from "next/link";
 // ** Partials
 import General from "./general";
 import Tasks from "./task/list";
-import Users from "./users";
 // ** Services
 import { fetchProjectById } from "services/ProjectService";
 import TaskForm from "./task/form";
+import Users from "./user/list";
+import UserForm from "./user/form";
 
 export default function ProjectDashboard() {
   const router = useRouter();
@@ -69,7 +70,7 @@ export default function ProjectDashboard() {
         <Link
           style={{ textDecoration: "none" }}
           href={{
-            href: `/projects`,
+            href: `/projects/users`,
             query: {
               id: router.query.id,
               slug: router.query.slug,
@@ -91,6 +92,7 @@ export default function ProjectDashboard() {
       {router.query.mode === "tasks" && <Tasks />}
       {router.query.mode === "users" && <Users />}
       {router.query.mode === "task-form" && <TaskForm />}
+      {router.query.mode === "user-form" && <UserForm />}
     </Row>
   );
 }

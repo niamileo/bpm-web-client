@@ -15,6 +15,11 @@ type UpdateProjectProps = CreateProjectsProps & {
 type FetchTasksProps = {};
 
 type FetchProjectMembersParams = {};
+type createProjectMember = {
+  project_id?: number|any,
+  user_id?: number,
+  role_id?: number
+};
 
 type FetchUsersParams = {};
 
@@ -29,5 +34,5 @@ type CreateTaskProps = {
   title?: string;
   desc?: string;
   state?: string;
-  project_id?:number
+  project_id?: number|any
 }
